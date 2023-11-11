@@ -40,20 +40,12 @@ body {
     }
 }
 
-.target {
-    width: 15vw;
+.gift {
+    width: 10vw;
     aspect-ratio: 1;
-    border: none;
-    background-image: url('./present.svg');
-    background-color: #0000;
-    animation: swing 1s ease-in-out infinite alternate;
 }
 
-@keyframes swing {
-    0% {
-        transform: rotate(-10deg);
-    }
-    100% {
-        transform: rotate(10deg);
-    }
+.gift svg {
+    width: 100%;
+    height: 100%;
 }
