@@ -25,7 +25,7 @@
     </defs>
     <title>gift-flat</title>
     <rect
-        class="cls-1"
+        class="cls-1 top"
         y="115.2"
         width="512"
         height="128"
@@ -41,7 +41,7 @@
         <rect class="cls-5" x="38.4" y="243.2" width="435.2" height="38.4" />
     </g>
     <path
-        class="cls-3"
+        class="cls-3 top"
         d="M307.2,12.8A70.38,70.38,0,0,0,256,34.88,70.41,70.41,0,0,0,142.08,115.2H204.8a32,32,0,1,1,32-32v32h38.4v-32a32,32,0,1,1,32,32h62.72A70.42,70.42,0,0,0,307.2,12.8Z"
     />
 </svg>

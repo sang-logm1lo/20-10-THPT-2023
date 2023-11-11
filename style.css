@@ -3,6 +3,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 
     /* #region background*/
     --s: 10vw;
@@ -46,7 +47,6 @@ body {
     padding: 0;
     aspect-ratio: 1;
     border: none;
-    background-image: url('./present.svg');
     background-color: #0000;
     animation: swing 1s ease-in-out infinite alternate;
     position: relative;
@@ -55,13 +55,36 @@ body {
     --theta: -45deg;
     --length: 100px;
 }
+.target:focus, .target:hover{
+    outline: none;
+}
+
+.target svg {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.target svg *{
+    transition: 1s all;
+}
+.target .ribbon.open{
+    translate: 0 384px;
+    height: 0px;
+}
+.target .top.open{
+    translate: 512px 0;
+}
+
 .target::before {
     --theta-offset: -5deg;
 }
 .target::after {
     --theta-offset: 5deg;
 }
-.target::before, .target::after{
+.target::before,
+.target::after {
     content: '';
     display: block;
     position: absolute;
@@ -72,15 +95,22 @@ body {
     rotate: calc(var(--theta) + var(--theta-offset));
     animation: expand 3s infinite;
 }
+
 @keyframes expand {
     0% {
         width: 0;
-        translate: calc(var(--target-width) / 2 + var(--r) * cos(var(--theta) + var(--theta-offset)))
+        translate: calc(
+                var(--target-width) / 2 + var(--r) *
+                    cos(var(--theta) + var(--theta-offset))
+            )
             calc(var(--r) * sin(var(--theta) + var(--theta-offset)));
     }
     5.56% {
         width: var(--length);
-        translate: calc(var(--target-width) / 2 + var(--r) * cos(var(--theta) + var(--theta-offset)))
+        translate: calc(
+                var(--target-width) / 2 + var(--r) *
+                    cos(var(--theta) + var(--theta-offset))
+            )
             calc(var(--r) * sin(var(--theta) + var(--theta-offset)));
     }
     11.11% {
@@ -89,16 +119,25 @@ body {
                 var(--target-width) / 2 + (var(--r) + var(--length)) *
                     cos(var(--theta) + var(--theta-offset))
             )
-            calc((var(--r) + var(--length)) * sin(var(--theta) + var(--theta-offset)));
+            calc(
+                (var(--r) + var(--length)) *
+                    sin(var(--theta) + var(--theta-offset))
+            );
     }
     22.22% {
         width: 0;
-        translate: calc(var(--target-width) / 2 + var(--r) * cos(var(--theta) + var(--theta-offset)))
+        translate: calc(
+                var(--target-width) / 2 + var(--r) *
+                    cos(var(--theta) + var(--theta-offset))
+            )
             calc(var(--r) * sin(var(--theta) + var(--theta-offset)));
     }
     27.78% {
         width: var(--length);
-        translate: calc(var(--target-width) / 2 + var(--r) * cos(var(--theta) + var(--theta-offset)))
+        translate: calc(
+                var(--target-width) / 2 + var(--r) *
+                    cos(var(--theta) + var(--theta-offset))
+            )
             calc(var(--r) * sin(var(--theta) + var(--theta-offset)));
     }
     33.33% {
@@ -107,7 +146,10 @@ body {
                 var(--target-width) / 2 + (var(--r) + var(--length)) *
                     cos(var(--theta) + var(--theta-offset))
             )
-            calc((var(--r) + var(--length)) * sin(var(--theta) + var(--theta-offset)));
+            calc(
+                (var(--r) + var(--length)) *
+                    sin(var(--theta) + var(--theta-offset))
+            );
     }
     100% {
         width: 0;
@@ -115,7 +157,10 @@ body {
                 var(--target-width) / 2 + (var(--r) + var(--length)) *
                     cos(var(--theta) + var(--theta-offset))
             )
-            calc((var(--r) + var(--length)) * sin(var(--theta) + var(--theta-offset)));
+            calc(
+                (var(--r) + var(--length)) *
+                    sin(var(--theta) + var(--theta-offset))
+            );
     }
 }
 
