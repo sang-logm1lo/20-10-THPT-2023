@@ -58,6 +58,9 @@ body {
 .target:focus, .target:hover{
     outline: none;
 }
+.target.open{
+    animation: none;
+}
 
 .target svg {
     width: 200%;
